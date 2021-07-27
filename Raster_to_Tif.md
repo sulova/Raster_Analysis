@@ -1,4 +1,4 @@
-** Export raster to a .tif format
+# Export raster to a .tif format#
 
 ```python 
 import rasterio
