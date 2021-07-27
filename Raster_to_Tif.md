@@ -44,7 +44,7 @@ nrg = numpy.dstack((nir_norm, red_norm, green_norm))
 plt.imshow(nrg*5)
 ```
 
-B) Change band value 
+B) Change band values 
 ```python
 # Calculate for each band *10
 def normal(array):
@@ -63,7 +63,8 @@ print(greenbri.min(), '-', greenbri.max(), 'mean:', greenbri.mean())
 print(bluebri.min(), '-', bluebri.max(), 'mean:', bluebri.mean())
 ```
 
-*Save to a tif file*
+Save to a tif file
+
 ```python
 # Save into a tif file
 rgb=rasterio.open('output.tiff', 'w', driver='Gtiff',
