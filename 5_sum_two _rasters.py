@@ -1,7 +1,6 @@
 import rasterio
 from rasterio.windows import Window
 from rasterio.transform import Affine
-
 from shapely.geometry import box
 
 raster1 = rasterio.open('../Data/Tree_Heights/test/S1_VV_WGS84_clip.tif')
@@ -16,12 +15,8 @@ print(bb_raster2)
 xminR1, yminR1, xmaxR1, ymaxR1 = raster1.bounds
 xminR2, yminR2, xmaxR2, ymaxR2 = raster2.bounds
 
-
-
 intersection = bb_raster1.intersection(bb_raster2)
 transform = Affine(raster1.res[0], 0.0, intersection.bounds[0], 0.0, -raster1.res[1], intersection.bounds[3])
-
-
 
 p1Y = intersection.bounds[3] - raster1.res[1]/2
 p1X = intersection.bounds[0] + raster1.res[0]/2
